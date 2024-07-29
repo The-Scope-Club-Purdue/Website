@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
           data.filter((faq) => faq.category === category).forEach((faq, index) => {
               const uniqueId = `${category.replace(/\s+/g, "")}${index}`;
-  
+              
               const card = document.createElement("div");
               card.className = "card";
   
@@ -28,13 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
               h2.className = "mb-0";
   
               const button = document.createElement("button");
-              button.className = "btn btn-link text-white collapsed";
+              button.className = "accordion-button btn-link text-white collapsed";
               button.type = "button";
-              button.setAttribute("data-toggle", "collapse");
-              button.setAttribute("data-target", `#collapse${uniqueId}`);
+              button.setAttribute("data-bs-toggle", "collapse");
+              button.setAttribute("data-bs-target", `#collapse${uniqueId}`);
               button.setAttribute("aria-expanded", "false");
               button.setAttribute("aria-controls", `collapse${uniqueId}`);
-              button.innerHTML = `${faq.question} <span class="arrow">&gt;</span>`;
+              button.innerHTML = `${faq.question} <span class="arrow position-absolute end-0 me-3">&gt;</span>`;
   
               h2.appendChild(button);
               cardHeader.appendChild(h2);
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
               const collapse = document.createElement("div");
               collapse.id = `collapse${uniqueId}`;
-              collapse.className = "collapse collapse-faq";
+              collapse.className = "collapse accordion-collapse collapse-faq";
               collapse.setAttribute("aria-labelledby", `heading${uniqueId}`);
   
               const cardBody = document.createElement("div");

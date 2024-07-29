@@ -97,3 +97,7 @@ h1.title {
     background-color: #2f313d;
     color: #ffffff;
 }
+
+.accordion-button::after {
+    background-image: url() !important;
+}
