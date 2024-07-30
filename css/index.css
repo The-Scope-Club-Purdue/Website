@@ -62,3 +62,9 @@ body {
     color: white; 
     transform: scale(1.1); 
 }
+
+h1.title {
+    color: #ccffcc; /* Light Green */
+    font-size: 2rem; /* Smaller title */
+    font-weight: 700;
+}
